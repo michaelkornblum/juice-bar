@@ -1,0 +1,33 @@
+{
+  "name": "juice-bar",
+  "version": "1.0.0",
+  "description": "a static site builder based on Gulp and Roots",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https:github.com/michaelkornblum/juice-bar.git"
+  },
+  "keywords": [
+    "staic",
+    "site",
+    "buider",
+    "Gulp",
+    "Roots"
+  ],
+  "author": "Michael Kornblum",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "browser-sync": "^2.8.2",
+    "coffee-script": "^1.9.3",
+    "del": "^1.2.1",
+    "gulp": "^3.9.0",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-svg-symbols": "^0.3.1",
+    "roots": "^3.2.2",
+    "run-sequence": "^1.1.2"
+  }
+}
