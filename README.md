@@ -68,13 +68,12 @@ Gulp will ask you for your website's name and description. It will then have NPM
 From the command line, enter:
 ```
 gulp
+Gulp wil start by cleaning out the ```roots/public``` directory and perform a series of build tasks before starting the file watcher and browser-sync server. Once your browser window opens to reveal a test page, Juice Bar is ready to help you build your website.
 ```
-Gulp wil start by cleaning out the ```roots/public``` directory and perform a series of build tasks before starting the file watcher and browser-sync server. Juice Bar is now ready to help you build your website.
-
 ### OSX Installation Guide
 
 #### Install C++ Compiler
-Juice Bar's Gulp component requires the use of a C++ compiler in order to work correctly. This is due to the fact that Roots and two Gulp plugins are compiled from source during the course of installation. Fortunately X-Code comes bundled with such a compiler. X-Code is available as a free download from the Apple App Store.
+Juice Bar's requires the use of a C++ compiler in order to work correctly. This is due to the fact that Roots and two Gulp plugins are compiled from source during the course of installation. Fortunately X-Code comes bundled with such a compiler. X-Code is available as a free download from the Apple App Store.
 
 #### Install Node.js
 On Mac OSX, it is imperative that you have Node.js installed using the Node Version Manager(NVM). If you have installed the Node binary from the website, delete it and start over. For detailed instructions on how to install NVM, go to  [the nvm github repo](https://github.com/creationix/nvm).
@@ -119,4 +118,56 @@ From the command line, enter:
 ```
 gulp
 ```
-Gulp wil start by cleaning out the ```roots/public``` directory and perform a series of build tasks before starting the file watcher and browser-sync server. Juice Bar is now ready to help you build your website.
+Gulp wil start by cleaning out the ```roots/public``` directory and perform a series of build tasks before starting the file watcher and browser-sync server. Once your browser window opens to reveal a test page, Juice Bar is ready to help you build your website.
+
+### Windows Installation Guide
+
+#### Install Git for Windows
+Git for Windows is vital to the installation of Juice Bar. Not only is it used to import templates into your Roots build, it also provides a Unix style command-line which will be used throughout this installation guide. Git for Windows is available as a free download from [this site](https://git-scm.com/download/win).
+
+#### Install Node.js
+Juice Bar is based on Node.js. Fortunately, it's a simple matter to download the Windows installer from [the Node.js project site](https://nodejs.org/).
+
+#### Install Python 2.7
+Node.js uses Python 2.7 to assist its compiler in building Roots and various Gulp plugins. To install Python, download the 2.7.10 installer from [the python.org webiste](https://www.python.org/downloads/). Once the installer is run, you must add python to your windows environment variables. Instructions on how to add python to you environment can be found [in this article](http://www.aaronstannard.com/how-to-setup-a-proper-python-environment-on-windows/).
+
+#### Install C++ Compiler
+Juice Bar requires the use of a C++ compiler in order to work correctly. This is due to the fact that Roots and two Gulp plugins are compiled from source during the course of installation. Fortunately Visual Studio comes bundled with such a compiler. Visual Studio Community can be downloaded from [here](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx). When installing Visual Studio, select the custom installation option and make sure that the C++ tools are all checked before installation begins. Wait until installation completes before you move on to the next step.
+
+#### Install Gulp and Roots
+
+**Note:** The following steps must be taken from within a Unix style command-line interface. Fortunately, such an interface is provided by Git for Windows. From the Start Menu, open the Git Bash application and follow the remainder of these instructions using this package.
+
+From the command-line, enter:
+```
+npm install -g gulp roots
+```
+The Node Package Manager(NPM) will download and install gulp and roots so it can be used globally on your system.
+
+#### Clone the Github Repo
+From the command-line, enter:
+```
+git clone: https://github.com/michaelkornblum/juice-bar.git
+```
+A folder will be created in your home directory named ```juice-bar```. Use the cd command to move into this newly created directory for the next step.
+
+#### Install Gulp Dependencies
+Once you have moved into the ```juice-bar``` directory, enter the following command:
+```
+npm install
+```
+The Node Package Manger(NPM) will download and install the modules needed to run the Gulp portion of Juice Bar.
+
+#### Create Roots Instance
+This is the last step before installation is complete. From the command-line, enter:
+```
+gulp roots:init
+```
+Gulp will ask you for your website's name and description. It will then have NPM pull in the remaining roots dependencies.
+
+#### Start Gulp
+From the command line, enter:
+```
+gulp
+```
+Gulp wil start by cleaning out the ```roots/public``` directory and perform a series of build tasks before starting the file watcher and browser-sync server. Once your browser window opens to reveal a test page, Juice Bar is ready to help you build your website.
