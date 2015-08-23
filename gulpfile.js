@@ -71,8 +71,11 @@ gulp.task('vectors', function(){
 //watch files for changes
 gulp.task('watch', function(){
   gulp.watch(['roots/**/*', '!roots/public/**/*'], ['roots:compile']);
-  gulp.watch('roots/public/**/*', browserSync.reload);
-  gulp.watch('images/**', ['images']);
+  gulp.watch('roots/public/**/*.html', browserSync.reload);
+  gulp.watch('roots/public/css/*.css', browserSync.reload);
+  gulp.watch('roots/public/js/*.js', browserSync.reload);
+  gulp.watch('roots/public/img/*', browserSync.reload);
+  gulp.watch('images/*', ['images']);
   gulp.watch('vectors/*.svg', ['vectors']);
 });
 
