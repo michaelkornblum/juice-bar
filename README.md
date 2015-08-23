@@ -1,6 +1,6 @@
 # the Juice Bar is Now Open
 
-** Juice Bar ** is an implementation of the Roots static site generator from within the Gulp streaming build system. It's purpose is to provide Roots with some of the additional functionality which is not (yet) available either natively or by extensions. Currently, Juice Bar includes the following gulp plug ins by default:
+**Juice Bar** is an implementation of the Roots static site generator from within the Gulp streaming build system. It's purpose is to provide Roots with some of the additional functionality which is not (yet) available either natively or by extensions. Currently, Juice Bar includes the following gulp plug ins by default:
 
 - gulp-imagemin
 - gulp-svg-symbols
@@ -13,7 +13,7 @@ To use Juice-Bar, the following packages must be installed on your system:
 - Gulp
 - Roots
 
-Additional packages may also be required, depending what environment or operating system you are using. See the section below for details.
+Additional packages may also be required, depending what environment or operating system you are using. See the sections below for details.
 
 ### Ubuntu Installation Guide
 
@@ -30,6 +30,56 @@ You will be asked for your root password. Once it has been entered, git will be 
 On Ubuntu, it is imperative that you have Node.js installed using the Node Version Manager(NVM). If you have installed the Node binary via PPA or from the Ubuntu repository, delete it and start over. For detailed instructions on how to install NVM, see [this article](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server).
 
 **Note:** Juice Bar has been tested on Node.js version 0.12.7. Install this latest version of Node instead of the one mentioned in the aforementioned article.
+
+#### Install Gulp and Roots
+From the command-line, enter:
+```
+nvm use 0.12.7
+```
+You will see a message on your terminal that states that Node is ready for use. Next, enter the following:
+
+```
+npm install -g gulp roots
+```
+The Node Package Manager(NPM) will download and install gulp and roots so it can be used globally on your system.
+
+#### Clone the Github Repo
+From the command-line, enter:
+```
+git clone: https://github.com/michaelkornblum/juice-bar.git
+```
+A folder will be created in your home directory named ```juice-bar```. Use the cd command to move into this newly created directory for the next step.
+
+#### Install Gulp Dependencies
+Once you have moved into the ```juice-bar``` directory, enter the following command:
+```
+npm install
+```
+The Node Package Manger(NPM) will download and install the modules needed to run the Gulp portion of Juice Bar.
+
+#### Create Roots Instance
+This is the last step before installation is complete. From the command-line, enter:
+```
+gulp roots:init
+```
+Gulp will ask you for your website's name and description. It will then have NPM pull in the remaining roots dependencies.
+
+#### Start Gulp
+From the command line, enter:
+```
+gulp
+```
+Gulp wil start by cleaning out the ```roots/public``` directory and perform a series of build tasks before starting the file watcher and browser-sync server. Juice Bar is now ready to help you build your website.
+
+### OSX Installation Guide
+
+#### Install C++ Compiler
+Juice Bar's Gulp component requires the use of a C++ compiler in order to work correctly. This is due to the fact that Roots and two Gulp plugins are compiled from source during the course of installation. Fortunately X-Code comes bundled with such a compiler. X-Code is available as a free download from the Apple App Store.
+
+#### Install Node.js
+On Mac OSX, it is imperative that you have Node.js installed using the Node Version Manager(NVM). If you have installed the Node binary from the website, delete it and start over. For detailed instructions on how to install NVM, go to  [the nvm github repo](https://github.com/creationix/nvm).
+
+**Note:** Juice Bar has been tested on Node.js version 0.12.7. Install this latest version of Node for best results.
 
 #### Install Gulp and Roots
 From the command-line, enter:
