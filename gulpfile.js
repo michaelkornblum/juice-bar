@@ -62,7 +62,7 @@ gulp.task('images', function(){
 //symbolize svgs
 gulp.task('vectors', function(){
   return gulp.src('./vectors/*.svg')
-    pipe($.symbols({
+    pipe($.svgSymbols({
       templates: ['default-svg']
     }))
     .pipe(gulp.dest('roots/views'));
