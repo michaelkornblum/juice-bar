@@ -6,6 +6,7 @@ var coffeeScript = require('coffee-script/register');
 var browserSync = require('browser-sync').create();
 var del = require('del');
 var runSequence = require('run-sequence');
+var svgSymbols = require('gulp-svg-symbols');
 
 //initialize roots instance
 gulp.task('roots:init', function(){
@@ -62,10 +63,10 @@ gulp.task('images', function(){
 //symbolize svgs
 gulp.task('vectors', function(){
   return gulp.src('./vectors/*.svg')
-    pipe($.svgSymbols({
+    .pipe(svgSymbols({
       templates: ['default-svg']
     }))
-    .pipe(gulp.dest('roots/views'));
+    .pipe(gulp.dest('./roots/views/'));
 });
 
 //watch files for changes
@@ -76,10 +77,10 @@ gulp.task('watch', function(){
   gulp.watch('roots/public/js/*.js', browserSync.reload);
   gulp.watch('roots/public/img/*', browserSync.reload);
   gulp.watch('images/*', ['images']);
-  gulp.watch('vectors/*.svg', ['vectors']);
+  gulp.watch('svg/*.svg', ['vectors']);
 });
 
 //main gulp task
 gulp.task('default', function(){
-  runSequence('clean', ['images', 'vectors'], 'roots:compile', 'browser-sync', 'watch');
+  runSequence('clean', 'images', 'vectors', 'roots:compile', 'browser-sync', 'watch');
 });
