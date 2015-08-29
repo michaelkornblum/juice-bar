@@ -20,10 +20,9 @@ gulp.task('roots:init', function(){
   });
 });
 
-//compile roots sites
 gulp.task('roots:compile', function(){
-  return require('child_process').exec('roots compile', {cwd: './roots'});
-});
+  return require('child_process').spawn('roots', ['watch'], {cwd: './roots/public', stdio: 'inherit'});
+})
 
 //deploy site
 gulp.task('roots:deploy', function(){
