@@ -21,7 +21,7 @@ gulp.task('roots:init', function(){
 });
 
 gulp.task('roots:compile', function(){
-  return require('child_process').spawn('roots', ['watch'], {cwd: './roots/public', stdio: 'inherit'});
+  return require('child_process').spawn('roots', ['compile'], {cwd: './roots/', stdio: 'inherit'});
 })
 
 //deploy site
