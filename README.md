@@ -171,3 +171,58 @@ From the command line, enter:
 gulp
 ```
 Gulp wil start by cleaning out the ```roots/public``` directory and perform a series of build tasks before starting the file watcher and browser-sync server. Once your browser window opens to reveal a test page, Juice Bar is ready to help you build your website.
+
+## Gulp Commands
+
+Juice-Bar uses a small collection of Gulp Tasks that work with Roots to create a full build environment. These tasks are listed below.
+
+### gulp roots:init
+The ```gulp roots:init``` task is used to create an instance of Roots within your build.
+
+```
+//initialize roots instance
+gulp.task('roots:init', function(){
+  return Roots.new({
+    path: path.join(__dirname, 'roots')
+    //uncomment the line below to use a custom template
+    //,template: 'roots-base'
+  }).done(function() {
+    console.log("roots is ready");
+  }, function(err){
+    console.error("oh no! " + err);
+  });
+});
+```
+
+By uncommenting the template entry on line 6, and adding the desired template value, its possible to bring a custom template into your build.
+
+### gulp roots:compile
+The ```gulp roots:compile``` task is used to compile files from the ```assets```, and ```views``` directory into a completed websites that's viewable from the ```public directory```
+
+### gulp roots:deploy
+The ```gulp roots:deploy``` task is used to deploy a finished website to your github pages account. Note that a working github pages account is neccessary in order to use this task.
+
+### gulp images
+The ```gulp images``` task is used to minify jpgs, gifs, pngs, and svgs that are lacated in the ```images``` directory and sends them to ```roots/assets```for compilation.
+
+### gulp vectors
+The ```gulp images``` task is used to combine svgs into a single ```svg-symbols.svg```` file that can be included in Jade Templates.
+
+ ```
+ //symbolize svgs
+ gulp.task('vectors', function(){
+   return gulp.src('./vectors/*.svg')
+     .pipe($.svgSymbols({
+       templates: ['default-svg']
+     }))
+     .pipe(gulp.dest('./roots/views/'));
+ });
+ ```
+
+ Note that by changing the ```gulp.dest``` parameter in this task, its possible to move the ```svg-symbols``` file whereever it best serves your custom template.
+
+ ### gulp browser-sync
+ The ```gulp browser-sync``` task starts a browser-sync instance that serves files from the ```roots/public``` directory. Note that the browser-sync server runs substancially slower than Roots native server, Static. It is advisable to run Static when building your site, and use browser-sync when your testing your site across devices and browsers.
+
+ ## Using Roots
+ Although it is possible to run gulp tasks in Juice-Bar, it is also possible to work on your website without so using so much as a single gulp task. From the command-line, change into the ```/roots``` directory and work on your website as if it's an ordinary roots project. Visit the [roots website](http:roots.cx) for details.
