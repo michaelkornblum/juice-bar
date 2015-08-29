@@ -11,7 +11,8 @@ var svgSymbols = require('gulp-svg-symbols');
 //initialize roots instance
 gulp.task('roots:init', function(){
   return Roots.new({
-    path: path.join(__dirname, 'roots')
+    path: path.join(__dirname, 'roots'),
+    //template: 'roots-base'
   }).done(function() {
     console.log("roots is ready");
   }, function(err){
