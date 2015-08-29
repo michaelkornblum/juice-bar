@@ -219,10 +219,10 @@ The ```gulp images``` task is used to combine svgs into a single ```svg-symbols.
  });
  ```
 
- Note that by changing the ```gulp.dest``` parameter in this task, its possible to move the ```svg-symbols``` file whereever it best serves your custom template.
+Note that by changing the ```gulp.dest``` parameter in this task, its possible to move the ```svg-symbols``` file where ever it best serves your custom template.
 
- ### gulp browser-sync
- The ```gulp browser-sync``` task starts a browser-sync instance that serves files from the ```roots/public``` directory. Note that the browser-sync server runs substancially slower than Roots native server, Static. It is advisable to run Static when building your site, and use browser-sync when your testing your site across devices and browsers.
+### gulp browser-sync
+The ```gulp browser-sync``` task starts a browser-sync instance that serves files from the ```roots/public``` directory. Note that the browser-sync server runs substancially slower than Roots native server, Static. It is advisable to run Static when building your site, and use browser-sync when your testing your site across devices and browsers.
 
- ## Using Roots
- Although it is possible to run gulp tasks in Juice-Bar, it is also possible to work on your website without so using so much as a single gulp task. From the command-line, change into the ```/roots``` directory and work on your website as if it's an ordinary roots project. Visit the [roots website](http:roots.cx) for details.
+## Using Roots
+Although it is possible to run gulp tasks in Juice-Bar, it is also possible to work on your website without so using so much as a single gulp task. From the command-line, change into the ```/roots``` directory and work on your website as if it's an ordinary roots project. Visit the [roots website](http:roots.cx) for details.
