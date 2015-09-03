@@ -84,5 +84,5 @@ gulp.task('watch', function(){
 
 //main gulp task
 gulp.task('default', function(){
-  runSequence('browser-sync', 'watch');
+  runSequence('images', 'vectors', 'roots:compile', 'browser-sync', 'watch');
 });
