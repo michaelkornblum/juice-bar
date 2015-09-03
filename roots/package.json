@@ -1,0 +1,26 @@
+{
+  "name": "michaelkornblum",
+  "description": "my personal blog site",
+  "dependencies": {
+    "accord": "^0.20.1",
+    "autoprefixer-stylus": "0.7.x",
+    "axis": "0.4.x",
+    "coffee-script": "1.9.x",
+    "css-pipeline": "0.2.x",
+    "dynamic-content": "^0.3.0",
+    "jade": "1.x",
+    "jeet": "^6.1.2",
+    "js-pipeline": "0.2.x",
+    "jstransformer-marked": "0.0.x",
+    "lost": "^6.5.0",
+    "marked": "0.3.x",
+    "moment": "^2.10.6",
+    "postcss": "^4.1.16",
+    "roots": "^3.2.2",
+    "rupture": "0.6.x",
+    "stylus": "0.51.x",
+    "typographic": "^2.9.3",
+    "underscore": "^1.8.3",
+    "underscore.string": "^3.2.0"
+  }
+}
