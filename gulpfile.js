@@ -8,11 +8,11 @@ var del = require('del');
 var runSequence = require('run-sequence');
 var svgSymbols = require('gulp-svg-symbols');
 
+
 //initialize roots instance
 gulp.task('roots:init', function(){
   return Roots.new({
-    path: path.join(__dirname, 'roots'),
-    //template: 'roots-base'
+    path: path.join(__dirname, 'roots')
   }).done(function() {
     console.log("roots is ready");
   }, function(err){
@@ -20,11 +20,20 @@ gulp.task('roots:init', function(){
   });
 });
 
+//compile roots sites
 gulp.task('roots:compile', function(){
-  return require('child_process').spawn('roots', ['compile'], {cwd: './roots/', stdio: 'inherit'});
+  return require('child_process').exec('roots compile', {cwd: './roots'}).on('exit', function(){
+    browserSync.init({
+      server : {
+        baseDir : './roots/public/'
+      }
+    })
+  });
 });
 
-
+gulp.task('roots:recompile', function(){
+  return require('child_process').exec('roots compile', {cwd: './roots'}).on('exit', function(){browserSync.reload()});
+});
 
 //deploy site
 gulp.task('roots:deploy', function(){
@@ -73,16 +82,12 @@ gulp.task('vectors', function(){
 
 //watch files for changes
 gulp.task('watch', function(){
-  gulp.watch(['roots/views/**/*.jade', 'roots/assets/**/*', '!roots/public/**/*'], ['roots:compile']);
-  gulp.watch('roots/public/**/*.html', browserSync.reload);
-  gulp.watch('roots/public/css/*.css', browserSync.reload);
-  gulp.watch('roots/public/js/*.js', browserSync.reload);
-  gulp.watch('roots/public/img/*', browserSync.reload);
+  gulp.watch(['roots/views/**/*', 'roots/assets/**/*', '!roots/public/**/*'], ['roots:recompile']);
   gulp.watch('images/*', ['images']);
   gulp.watch('svg/*.svg', ['vectors']);
 });
 
 //main gulp task
 gulp.task('default', function(){
-  runSequence('images', 'vectors', 'roots:compile', 'browser-sync', 'watch');
+  runSequence('clean', 'images', 'vectors', 'roots:compile', 'watch');
 });
