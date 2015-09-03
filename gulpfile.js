@@ -22,7 +22,9 @@ gulp.task('roots:init', function(){
 
 gulp.task('roots:compile', function(){
   return require('child_process').spawn('roots', ['compile'], {cwd: './roots/', stdio: 'inherit'});
-})
+});
+
+
 
 //deploy site
 gulp.task('roots:deploy', function(){
@@ -71,7 +73,7 @@ gulp.task('vectors', function(){
 
 //watch files for changes
 gulp.task('watch', function(){
-  gulp.watch(['roots/**/*', '!roots/public/**/*'], ['roots:compile']);
+  gulp.watch(['roots/views/**/*.jade', 'roots/assets/**/*', '!roots/public/**/*'], ['roots:compile']);
   gulp.watch('roots/public/**/*.html', browserSync.reload);
   gulp.watch('roots/public/css/*.css', browserSync.reload);
   gulp.watch('roots/public/js/*.js', browserSync.reload);
@@ -82,5 +84,5 @@ gulp.task('watch', function(){
 
 //main gulp task
 gulp.task('default', function(){
-  runSequence('clean', 'images', 'vectors', 'roots:compile', 'browser-sync', 'watch');
+  runSequence('browser-sync', 'watch');
 });
