@@ -39,7 +39,7 @@ nvm use 0.12.7
 You will see a message on your terminal that states that Node is ready for use. Next, enter the following:
 
 ```
-npm install -g gulp roots
+npm install -g gulp roots@3.1
 ```
 The Node Package Manager(NPM) will download and install gulp and roots so it can be used globally on your system.
 
@@ -88,7 +88,7 @@ nvm use 0.12.7
 You will see a message on your terminal that states that Node is ready for use. Next, enter the following:
 
 ```
-npm install -g gulp roots
+npm install -g gulp roots@3.1
 ```
 The Node Package Manager(NPM) will download and install gulp and roots so it can be used globally on your system.
 
@@ -140,7 +140,7 @@ Juice Bar requires the use of a C++ compiler in order to work correctly. This is
 
 From the command-line, enter:
 ```
-npm install -g gulp roots
+npm install -g gulp roots@3.1
 ```
 The Node Package Manager(NPM) will download and install gulp and roots so it can be used globally on your system.
 
