@@ -62,7 +62,7 @@ gulp.task('clean', function(cb){
 
 //minify images
 gulp.task('images', function(){
-  return gulp.src('./images/*')
+  return gulp.src(['./images/**/*.png', '/images/**/*.jpg', 'images/**/*.gif', 'images/**/*.svg', '/images/**/*.jpeg'])
     .pipe($.imagemin({
       optimizationLevel: 3,
       progressive: true,
