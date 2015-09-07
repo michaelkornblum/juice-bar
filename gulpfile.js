@@ -82,7 +82,13 @@ gulp.task('vectors', function(){
 
 //watch files for changes
 gulp.task('watch', function(){
-  gulp.watch(['roots/views/**/*', 'roots/assets/**/*', '!roots/public/**/*'], ['roots:recompile']);
+  gulp.watch([
+    'roots/views/**/*',
+    'roots/assets/**/*',
+    'roots/app.coffee',
+    'roots/app.production.coffee',
+    '!roots/public/**/*'],
+    ['roots:recompile']);
   gulp.watch('images/*', ['images']);
   gulp.watch('svg/*.svg', ['vectors']);
 });
