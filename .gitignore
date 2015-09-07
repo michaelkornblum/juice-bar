@@ -1,0 +1,5 @@
+node_modules
+roots/node_modules
+roots/public
+.DS_Store
+roots/.DS_Store

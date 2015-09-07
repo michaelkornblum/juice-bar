@@ -1,0 +1,16 @@
+{
+  "name": "-linux-web-journal",
+  "description": "a blog about Linux, open source software and web building",
+  "dependencies": {
+    "autoprefixer-stylus": "0.7.x",
+    "axis": "0.4.x",
+    "coffee-script": "1.9.x",
+    "css-pipeline": "0.2.x",
+    "jade": "1.x",
+    "js-pipeline": "0.2.x",
+    "jstransformer-marked": "0.0.x",
+    "marked": "0.3.x",
+    "rupture": "0.6.x",
+    "stylus": "0.51.x"
+  }
+}
