@@ -46,7 +46,7 @@ The Node Package Manager(NPM) will download and install gulp and roots so it can
 #### Clone the Github Repo
 From the command-line, enter:
 ```
-git clone: https://github.com/michaelkornblum/juice-bar.git
+git clone https://github.com/michaelkornblum/juice-bar.git
 ```
 A folder will be created in your home directory named ```juice-bar```. Use the cd command to move into this newly created directory for the next step.
 
