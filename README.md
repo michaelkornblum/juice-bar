@@ -1,6 +1,6 @@
 # the Juice Bar is Now Open
 
-**Juice Bar** is an implementation of the Roots static site generator from within the Gulp streaming build system. It's purpose is to provide Roots with some of the additional functionality which is not (yet) available either natively or by extensions. Currently, Juice Bar includes the following gulp plug ins by default:
+**Juice Bar** is an implementation of the Roots static site generator from within the Gulp streaming build system. It's purpose is to provide Roots with some of the additional functionality which is not (yet) available either natively or by extensions. Currently, Juice Bar includes the following gulp plugins by default:
 
 - gulp-imagemin
 - gulp-svg-symbols
@@ -46,7 +46,7 @@ The Node Package Manager(NPM) will download and install gulp and roots so it can
 #### Clone the Github Repo
 From the command-line, enter:
 ```
-git clone: https://github.com/michaelkornblum/juice-bar.git
+git clone https://github.com/michaelkornblum/juice-bar.git
 ```
 A folder will be created in your home directory named ```juice-bar```. Use the cd command to move into this newly created directory for the next step.
 
